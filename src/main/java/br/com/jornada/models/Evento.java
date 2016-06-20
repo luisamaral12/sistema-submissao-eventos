@@ -3,13 +3,25 @@ package br.com.jornada.models;
 import java.awt.Image;
 import java.util.Calendar;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Evento {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	
 	private String nome;
 	private String descricao;
 	private String site;
 	private String local;
 	private Image logo;
 	private Calendar data;
+	
 	private Usuario organizador;
 	
 	public String getNome() {
